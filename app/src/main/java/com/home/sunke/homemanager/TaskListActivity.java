@@ -14,7 +14,9 @@ public class TaskListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list);
         if(getSupportFragmentManager().findFragmentById(R.id.fragment_task_list_container) == null){
-            getSupportFragmentManager().beginTransaction().add(new TaskListFragment(),FRAGMENT_TASK_LIST).commit();
+             getSupportFragmentManager().beginTransaction().add(R.id.fragment_task_list_container,new TaskListFragment()).commit();
+        }if(getSupportFragmentManager().findFragmentById(R.id.fragment_task_content_container) == null){
+             getSupportFragmentManager().beginTransaction().add(R.id.fragment_task_content_container,new TaskContentFragment()).commit();
         }
     }
 }
